@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   .:: Aplikasi Sederhana Javascript - Tutorialabs.com ::.
+  </title>
+  <!-- load styles -->
+  <link rel="stylesheet" href="styles.css"/>
+		
+  <!-- load javascript -->
+  <script type="text/javascript" src="script.js"></script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <h1>Travel Bintang Abadi</h1>
+   <h5>Keberangkatan dari Bandung</h5>
+
+    <!-- form pengisian tiket -->
+    <div class="left">
+    <fieldset>
+     <legend>Formulir</legend>
+
+     <!-- form input diberi nama finput yang nantinya akan dipanggil dengan javascript -->
+     <form name="finput">
+     	<!-- textfield nama untuk input nama diberinama nama -->
+     	<div class="form-control">
+     		<label for="nama">Nama<label>
+     		<input type="text" id="nama" name="nama" class="textfield" onblur="vnama()" size="20" />
+     	</div>
+     	<!-- dropdown list tujuan untuk arah tujuan diberinama tujuan -->
+     	<div class="form-control">
+     		<label for="tujuan">Tujuan<label>
+     		<select id="tujuan" name="tujuan" class="textfield" onchange="vtujuan()" style="width:300px;" >							
+     			<option value="">Pilih Tujuan</option>
+     			<option value="1">Jakarta</option>
+     			<option value="2">Solo</option>
+     			<option value="3">Surabaya</option>
+     		</select>
+     	</div>
+     	<!-- dropdown list untuk pengisian kelas diberinama kelas  -->
+     	<div class="form-control">
+     		<label for="kelas">Kelas<label>
+     		<select id="kelas" name="kelas" class="textfield" onchange="vkelas()"  style="width: 300px;"  >							
+     			<option value="">Pilih kelas</option>
+     			<option value="1">Eksekutif</option>
+     			<option value="2">Bisnis</option>
+     			<option value="3">Ekonomi</option>
+     		</select>
+     	</div>
+     	<!-- textfield number untuk pengisian jumlah tiket diberi nama jumlah -->
+     	<div class="form-control">
+     		<div class="left" style="margin-right: 70px;">
+     			<label for="jumlah">Jumlah Tiket<label>
+     			<input type="number" id="jumlah" name="jumlah" class="textfield" style="width: 70px;" onblur="vjumlah()"  />
+     		</div>
+     	<!-- ckechbox member untuk pilihan apakah member atau tidak diberinama member -->
+     		<div class="right">
+     			<label for="member">Member<label>
+     			<input type="checkbox" id="member" name="member" class="checkbox"  /> <span style="color: #2c3e50;">Ya</span>
+     		</div>
+     	</div>
+    </fieldset>
+    </div>
+    <!-- /end form pengisian tiket -->
+    
+    <!-- button control -->
+    <div class="middle">
+    	<!-- untuk button hittung ada event onclick (beraksi ketika button diclick) dan berisi fungsi javascript bhitung() berfungsi untuk menghitung harga tiket yang nantinya akan dibuat di file javascript -->
+    	<button id="hitung" type="button" onclick="bhitung()">Hitung</button>
+    	<!-- button ulang berfungsi untuk mengulang perhitungan-->
+    	<button id="ulang" type="reset" onclick="bulang()">Ulang</button>
+    	</form>
+    </div>
+    <!-- /end button control -->
+    
+    <!-- informasi harga -->
+    <div class="right">
+    	<fieldset>
+    	<legend>Informasi Harga</legend>
+    		<!-- form output diberinama foutput -->
+    		<form name="foutput">
+    			<!-- textfield output harga -->
+    			<div class="form-control">
+    				<label for="harga">Harga Tiket<label>
+    				<input type="text" id="harga" name="harga" class="textfield disabled" size="20" readonly />
+    			</div>
+    			<!-- textfield sub total harga / sebelum didiskon -->
+    			<div class="form-control">
+    				<label for="sub">Sub Total<label>
+    				<input type="text" id="sub" name="sub" class="textfield disabled" size="20" readonly />
+    			</div>
+    			<!-- textfield diskon -->
+    			<div class="form-control">
+    				<label for="diskon">Diskon<label>
+    				<input type="text" id="diskon" name="diskon" class="textfield disabled" size="20" readonly />
+    			</div>
+    			<!-- textfield total bayar -->
+    			<div class="form-control">
+    				<label for="total">Total Bayar<label>
+    				<input type="text" id="total" name="total" class="textfield disabled" size="20" readonly />
+    			</div>
+    		</form>
+    	</fieldset>
+    </div>
+	<!-- /end informasi harga -->
+	
+	</body>
+</html>
